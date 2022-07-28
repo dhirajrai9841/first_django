@@ -1,0 +1,50 @@
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <title>Login</title>
+    <style>
+    body{
+    
+    margin:0px;
+    padding:0px;
+
+
+   }
+   .container{
+    background-color:skyblue;
+    box-sizing: border-box;
+    text-align: center;
+
+
+  }
+
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <div class="container">
+        <h1>Login</h1>
+        {% if messages %}
+          {% for error in messages %}
+          <p>{{ error }}</p><br>
+          {% endfor %}
+        {% endif %}
+        
+        <form action="/successfullUser" method="POST">
+          {% csrf_token %}
+          <!-- <label for="username">Username</label> -->
+          <input type="text" clss="form-control" name="username" placeholder="Username" />
+          <!-- <label for="password">Password:</label> --><br />
+          <input type="password" clss="form-control" name="password" placeholder="Password" />
+
+          <button type="submit" class="submit" id="submit1">Login</button>
+          <p>Not a member? <a href="/registration">Register Here</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

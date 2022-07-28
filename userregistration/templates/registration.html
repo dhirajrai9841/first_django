@@ -1,0 +1,97 @@
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <title>userregisrtration</title>
+    <style>
+        body{
+            background-color: beige;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .body{
+          text-align: center;
+          border:1px solid;
+          border-radius: 20px;
+          height:900px;
+          width:600px;
+          background-color: lightcoral;
+        }
+        .p{
+          font-size:bold;
+        }
+
+        /* .cat{
+            width:350px;
+            height:500px;
+            box-shadow: 0 0 40px 20px rgba(red, green, blue);
+        }
+        .inner-box{
+            position:relative;
+            height:100%;
+            width:100%
+        }
+        .front,.back{
+            position:absolute;
+            height: 100%;
+            width: 100%;
+            background-position: center;
+
+
+
+        } */
+
+
+
+        
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="body"> 
+          
+        <h1>Registration</h1>
+        <form action="/registeruser" method="POST"> 
+        {% csrf_token %} 
+          
+          
+          <p>Firstname: <input  name="firstname" type="text" clss="form-control" name="firstname" placeholder="firstname" /></p> 
+          
+           <br>
+          <p>Lastname: <input  name="lastname" type="text" clss="form-control" name="lastname" placeholder="lastname" /></p> 
+          
+         <br /> 
+           <p>Dateofbirth:<input  name="Dateofbirth" type="text" clss="form-control" name="date of birth" placeholder="date of birth" /></p><br /> 
+          <p>email: 
+             <input name="email" type="text" clss="form-control" name="email" placeholder="email" /> 
+
+          </p>
+          <p>Username: <input  name="username" type="username" clss="form-control" name="username" placeholder="username" /></p><br> 
+          <p>Password:<input name="password" type="password" clss="form-control" name="password" placeholder="password"/></p>
+          <br>
+          <p>
+            Reenterpassword:<input name="Reenterpassword" type="password" clss="form-control" name="password" placeholder="password"/>
+          </p>
+          
+         
+
+          <button type="submit" class="submit" id="submit">signup</button> 
+            <p>already a member <a href="/login.html"></a> already register</p>  
+         </form> 
+        
+      </div>
+    </div>
+  </body>
+</html>
